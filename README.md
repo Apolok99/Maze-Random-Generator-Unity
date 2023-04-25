@@ -1,4 +1,7 @@
-# Maze-Random-Generator-Unity
+
+![Maze](https://user-images.githubusercontent.com/62213937/234410011-0cd4ac6d-ca16-4387-8e48-5c4abe584539.PNG)
+
+# Maze Random Generator Unity with Prim's Algorithm
  Simple Unity project that creates a random maze with boxes as walls using a version of Prim's Algorithm.
 
 ## Installation
@@ -47,6 +50,13 @@ Prim's algorithm is a greedy algorithm for finding a minimum spanning tree for a
 (Images from [Arne Stenkrona](https://github.com/ArneStenkrona/MazeFun))
 
 - Add the frontier cells of `(x, y)` (if any) to `s`
+
+## Limitations
+The maze generated has some peculiar characteristics.
+1. **Outer edge wall:** The edge of the maze will never have a passage, meaning that the maze has neither exit nor entrance (the script must be modified for this).
+2. **Maze size and initial cell:** Depending on the initial cell and the size of the maze, an entire column or row may be in a wall state. This is because the frontier cells are at a distance of two, and if a path is generated in the row or column before the outer wall this path will never reach that row or column.
+3. **No loop paths:** The algorithm only creates short dead ends.
+
 ## Acknowledgements
  - [Maze Generation: Prim's Algorithm](https://weblog.jamisbuck.org/2011/1/10/maze-generation-prim-s-algorithm)
 
